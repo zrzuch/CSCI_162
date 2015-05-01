@@ -226,11 +226,12 @@ public class ArrayStack<E> implements Cloneable {
 	 **/
 	public void push(E item) {
 		if (manyItems == data.length) {
-			// Double the capacity and add 1; this works even if manyItems is 0.
-			// However, in
-			// case that manyItems*2 + 1 is beyond Integer.MAX_VALUE, there will
-			// be an
-			// arithmetic overflow and the bag will fail.
+			/* Double the capacity and add 1; this works even if manyItems is 0.
+			 * However, in
+			 * case that manyItems*2 + 1 is beyond Integer.MAX_VALUE, there will
+			 * be an
+			 * arithmetic overflow and the bag will fail.
+			 */
 			ensureCapacity(manyItems * 2 + 1);
 		}
 		data[manyItems] = item;
